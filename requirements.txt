@@ -5,3 +5,4 @@ Flask_Bootstrap==3.3.7.1
 flask_ckeditor==0.5.1
 flask_wtf==1.2.1
 WTForms==3.0.1
+gunicorn==21.2.0
