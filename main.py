@@ -11,7 +11,7 @@ import os
 import email_validator
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '12312312'
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY_APP']
 Bootstrap5(app)
 
 
