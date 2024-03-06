@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block style %}
+{{ super() }}
+d-block {
+    padding-left: 0;
+    padding-right: 0;
+}
+.carousel-control-next-icon:after{
+   content: '>';
+   font-size: 55px;
+   color: black;
+ }
+
+.carousel-control-prev-icon:after {
+   content: '<';
+   font-size: 55px;
+   color: black;
+ }
+{% endblock %}
+{% block content %}
+<div class="p-5 mb-0 text-center bg-image rounded-3 position-relative"  style="
+    background-image: url('./static/main.JPG');
+    box-sizing: border-box;
+    height: 100vh;
+    display: block;
+    background-size: cover;
+  ">
+  <div class="mask position-absolute top-0 end-0 bottom-0 start-0" style="background-color: rgba(0, 0, 0, 0.4);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white"><i class="bi bi-camera white" style="font-size:10vw;"></i>
+      <h1 class="text-white protest_revolution" style="font-size:8vw;">Artem Vetrov</h1><br>
+      <p class="text-white oswald" style="font-size:2.5vw;">
+        Hi! I'm {{ age }} years old, eternity borned photographer from Kyiv, Ukraine!
+      </p><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+   <h3 class="oswald my-5 text-center" style=font-size:3vw;">Some of my Work</h3>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for index in range(1, 2) %}
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img_main/' + index|string + '.jpg') }}" class="d-block w-100" style="width:100%" alt="Image">
+          </div>
+          {% endfor %}
+          {% for index in range(2, 9) %}
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='./img_main/' + index|string + '.jpg') }}" class="d-block w-100" style="width:100%" alt="Image">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    </div>
+  <h3 class="oswald my-5 text-center" style=font-size:3vw;">Let's get to know each other better!<br>See you in the Gallery...</h3>
+   </div>
+{% endblock %}

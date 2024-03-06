@@ -1,0 +1,33 @@
+{% from 'bootstrap5/form.html' import render_form %}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="p-5 mb-0 text-center bg-image rounded-3 position-relative"  style="
+    background-image: url('./static/me.JPG');
+    box-sizing: border-box;
+    height: 100vh;
+    display: block;
+    width: 100vw;
+    background-size: cover;
+  ">
+  <div class="mask position-absolute top-0 end-0 bottom-0 start-0" style="background-color: rgba(0, 0, 0, 0.4);">
+    <div class="row">
+      <div class="col-12">
+      <p class="text-white oswald" style="font-size:3vh;">
+        <br>
+        When the sun sets,<br>I take my burden off my shoulders,<br>
+        I listen to the silence and trust the ticking of the clock.<br>
+        Every day I get closer to dawn,<br> but I don’t know one thing <br>if is someone waiting for me there...
+        <br><br><br>
+        But one thing is true: acquiring will,<br>I become as if I have no control over myself...
+      </p><br>
+      </div>
+
+    </div>
+        <div class="col-4 mx-auto text-white oswald">
+          {{ render_form(form, action=action, method="post", button_style="light")}}
+        </div>
+  </div>
+</div>
+
+{% endblock %}
